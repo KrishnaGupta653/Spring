@@ -1,0 +1,10 @@
+brew services start mongodb-community@7.0
+brew services stop mongodb-community@7.0
+
+
+mongod --config /opt/homebrew/etc/mongod.conf
+
+brew services list
+
+//If you started MongoDB manually as a background process:
+ps aux | grep -v grep | grep mongod
