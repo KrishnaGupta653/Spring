@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- bean definitions here -->
+     <context:component-scan base-package="com.example"/>
+    
+    <!-- beans are the objects -->
+     <bean id="dev" class="com.example.Dev">
+        <!-- this is for setter -->
+        <!-- <property name="age" value="12"/> -->
+        
+        <!-- this is for constructor -->
+         <!-- <constructor-arg index="1" value="12"/>
+         <constructor-arg index="0" value="34"/> -->
+                <!--we can use name also      -->
+         <!-- <property name="laptop" ref="lap1"/> -->
+
+         <!-- constructor injection using ref -->
+         <constructor-arg ref="lap1"/>
+    </bean> 
+
+    <!-- this will create another object of Dev class -->
+    <!-- <bean id="dev1" class="com.example.Dev">
+    </bean>  -->
+   
+    
+    <bean id="lap1" class="com.example.Laptop">
+    </bean> 
+
+</beans>
