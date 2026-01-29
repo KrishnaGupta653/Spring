@@ -9,11 +9,11 @@ public class App
     {
         ApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
         //1
-        //Dev obj=context.getBean(Dev.class);
+        //Dev obj=context.getBean(Dev.class); //byType
         //ob.build();
 
         //2
-        // Dev obj=(Dev)context.getBean("dev"); //by id
+        // Dev obj=(Dev)context.getBean("dev"); //byId
         // obj.build();
 
         

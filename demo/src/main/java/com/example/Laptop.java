@@ -2,14 +2,13 @@ package com.example;
 
 import org.springframework.stereotype.Component;
 
-@Component
-public class Laptop {
+public class Laptop implements Computer {
     public Laptop(){
-        System.out.println("Laptop constructor called");
+        System.out.println("\nLaptop constructor called \n");
     }
 
     public void compile(){
-        System.out.println("Compiling the code on laptop...");
+        System.out.println("\nCompiling the code on laptop...\n");
     }   
     
 }

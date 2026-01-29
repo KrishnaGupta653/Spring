@@ -8,9 +8,21 @@
 
     <!-- bean definitions here -->
      <context:component-scan base-package="com.example"/>
+<!-- 
+     IMPORTANT NOTE: The component-scan will create objects for only those classes which are annotated with @Component annotation.
+        So if you want Spring to manage any class which is not annotated with @Component, then you have to define the bean for that class here in this XML file. -->
+
+
+    <!-- Spring creates objects before getBean()
+    ✔ Constructor injection ensures tight initialization
+    ✔ Interface (Computer) enables loose coupling
+    ✔ Changing to Desktop needs only XML change -->
+
+
+    
     
     <!-- beans are the objects -->
-     <bean id="dev" class="com.example.Dev">
+     <bean id="dev" class="com.example.Dev" autowire="byType">
         <!-- this is for setter -->
         <!-- <property name="age" value="12"/> -->
         
@@ -21,15 +33,30 @@
          <!-- <property name="laptop" ref="lap1"/> -->
 
          <!-- constructor injection using ref -->
-         <constructor-arg ref="lap1"/>
+         <!-- <constructor-arg ref="lap1"/> -->
+
+
+         <!-- computer interface -->
+          <!-- <property name="comp" ref="desk1"/> -->
+          <!-- to avoid this ref in bean tag itslef we can add autowired -->
+
+
     </bean> 
+
+
+    
 
     <!-- this will create another object of Dev class -->
     <!-- <bean id="dev1" class="com.example.Dev">
     </bean>  -->
    
     
-    <bean id="lap1" class="com.example.Laptop">
+    <bean id="lab1" class="com.example.Laptop" primary="true">
     </bean> 
+    <bean id="desk1" class="com.example.Desktop">
+    </bean>
+    <!-- since we are using autowire byName, the name of the bean (id) must be the same as the property name in the Dev class -->
+
+    <bean id="comp" class="com.example.Laptop"></bean>
 
 </beans>

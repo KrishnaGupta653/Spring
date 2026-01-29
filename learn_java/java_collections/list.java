@@ -5,6 +5,7 @@
 
 import java.lang.reflect.Array;
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.lang.reflect.Field;
 class Student{
     private String name;
@@ -280,7 +281,36 @@ public class list {
         }
 
 
+        List<String> shoppingList= new ArrayList<>();
+        shoppingList.add("Milk");
+        shoppingList.add("Eggs");
+        shoppingList.add("Bread");  
+        System.out.println("\nShopping List: " + shoppingList);
+
+        // ArrayList does not allow structural modification during iteration because its iterator is fail-fast.
+        //❌ we cannnot update a arraylist while we are litterating through it
+        // ✅ We cannot modify an ArrayList while iterating through it.
+
+        List<String> backupList= new CopyOnWriteArrayList<>(shoppingList); //creating a copy
+        for(String item : backupList) {
+            System.out.println("Buying: " + item);
+            if(item.equals("Eggs")){
+                backupList.add("Butter"); //modifying list during iteration
+            }
+        }
+        System.out.println("\nUpdated (backup) Shopping List using CopyOnWriteArrayList: " + backupList);
 
 
+        //2. or use Iterator
+        // Iterator allows safe removal of elements during iteration without causing ConcurrentModificationException.
+        Iterator<String> iterator =shoppingList.iterator();
+        while(iterator.hasNext()) {
+            String item=iterator.next();
+            System.out.println("Buying: " + item);
+            if(item.equals("Eggs")){
+                iterator.remove(); //safe removal during iteration  
+            }
+        }
+        System.out.println("\nUpdated Shopping List using Iterator: " + shoppingList);
     }
 }

@@ -1,6 +1,6 @@
 //A linked list is a collection of nodes where each node stores data and a reference to the next node.
 //[value | next]
-
+import java.util.LinkedList;
 class Node {
     int value;
     Node next;
@@ -11,8 +11,8 @@ class Node {
         this.next = null;
     }
 }
-
-class LinkedList {
+//1.Manual Implementation of Linked List
+class MyLinkedList {
     Node head;
     // Insert at end
     void add(int value) {
@@ -43,14 +43,25 @@ class LinkedList {
 
 public class linked_list {
     public static void main(String[] args) {
-
-        LinkedList list = new LinkedList();
+        //1. Using Manual Implementation
+        MyLinkedList list = new MyLinkedList();
 
         list.add(1);
         list.add(2);
         list.add(3);
-
         list.display();
+
+        //2. Using Java's Built-in LinkedList
+        LinkedList<Integer> list2 = new LinkedList<>();
+        list2.add(10);
+        list2.add(20);
+        list2.add(30);
+        System.out.println(list2);
+
+        list2.get(2); // Remove element at index 1
+
+
+
     }
 }
 
