@@ -3,7 +3,6 @@ package com.spring.myFirstProject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 
 @RestController //defines a class as a RESTful web service controller, capable of handling HTTP requests and returning responses in a RESTful manner.

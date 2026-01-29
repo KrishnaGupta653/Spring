@@ -1,14 +1,9 @@
 package com.shadowdev.journalApp.entity;
-
-import java.sql.Date;
 import java.time.LocalDateTime;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import tools.jackson.databind.annotation.JsonSerialize;
-import tools.jackson.databind.ser.std.ToStringSerializer;
 
 @Document(collection = "journalEntries")    // Marks this class as a MongoDB document entity it means this class will be mapped to a collection in MongoDB
 public class JournalEntry {

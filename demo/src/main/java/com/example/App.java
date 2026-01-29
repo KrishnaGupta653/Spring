@@ -1,6 +1,7 @@
 package com.example;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App 
@@ -19,6 +20,7 @@ public class App
         
         Dev obj=(Dev)context.getBean("dev");
         obj.build();
+
         
         //1
         // obj.setAge(25);
@@ -30,6 +32,7 @@ public class App
 
 
         System.out.println( "Hello World!" );
+        ((AbstractApplicationContext) context).close();
 
     }
 }

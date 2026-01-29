@@ -1,7 +1,4 @@
 package com.example;
-
-import org.springframework.stereotype.Component;
-
 public class Laptop implements Computer {
     public Laptop(){
         System.out.println("\nLaptop constructor called \n");
