@@ -44,7 +44,7 @@ public class JournalEntryControllerV2 {
 
     @GetMapping("/{username}")
     public ResponseEntity<?> getAllJournalEntriesOfUser(@PathVariable String username){
-        User user=userService.getUserByUsername(username);
+        User user=userService.getUserByUsername(username); //this will fetch user along with journal entries because of DBRef not only username but also journal entries will be fetched
         List<JournalEntry> all=user.getJournalEntries();
         if(all!=null && !all.isEmpty()) {
             return new ResponseEntity<>(all,HttpStatus.OK);
@@ -63,7 +63,7 @@ public class JournalEntryControllerV2 {
     // }
     @PostMapping("/{username}")
     public JournalEntry createEntry(@PathVariable String username, @RequestBody JournalEntry myEntry) { 
-        myEntry.setDate(LocalDateTime.now());
+        myEntry.setDate(LocalDateTime.now());//set current date and time for the journal entry
         journalEntryService.saveEntry(myEntry,username);
         return myEntry;
     } 
@@ -87,11 +87,11 @@ public class JournalEntryControllerV2 {
     //     journalEntryService.saveEntry(old);
     //     return old; 
     // }
-    @PutMapping("{username}/id/{id}")
-    public String updateJournalById(@PathVariable String username, @PathVariable ObjectId id, @RequestBody JournalEntry newEntry) {
-        
-        return ;
-    }
+//    @PutMapping("{username}/id/{id}")
+//    public String updateJournalById(@PathVariable String username, @PathVariable ObjectId id, @RequestBody JournalEntry newEntry) {
+//
+//        return true ;
+//    }
 
     // @DeleteMapping("id/{myId}")
     // public ResponseEntity<Void> deleteJournalEntrybyId(@PathVariable ObjectId myId) {

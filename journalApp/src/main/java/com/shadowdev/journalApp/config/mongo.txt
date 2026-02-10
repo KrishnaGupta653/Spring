@@ -1,0 +1,4 @@
+username: tkrishna6gupta_db_user
+pass: fxsuRGPJ9zDGEvzh
+
+mongodb+srv://tkrishna6gupta_db_user:fxsuRGPJ9zDGEvzh@cluster0.q5egyw9.mongodb.net/?appName=Cluster0
