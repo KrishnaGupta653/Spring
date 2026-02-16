@@ -1,0 +1,37 @@
+{"properties": [
+  {
+    "name": "kafka.consumer.value-deserializer",
+    "type": "java.lang.String",
+    "description": "A description for 'kafka.consumer.value-deserializer'"
+  },
+  {
+    "name": "kafka.bootstrap-servers",
+    "type": "java.lang.String",
+    "description": "A description for 'kafka.bootstrap-servers'"
+  },
+  {
+    "name": "kafka.topic.name",
+    "type": "java.lang.String",
+    "description": "A description for 'kafka.topic.name'"
+  },
+  {
+    "name": "kafka.consumer.key-deserializer",
+    "type": "java.lang.String",
+    "description": "A description for 'kafka.consumer.key-deserializer'"
+  },
+  {
+    "name": "kafka.consumer.group-id",
+    "type": "java.lang.String",
+    "description": "A description for 'kafka.consumer.group-id'"
+  },
+  {
+    "name": "spring.json.trusted.packages",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.json.trusted.packages'"
+  },
+  {
+    "name": "spring.kafka.topic.name",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.kafka.topic.name'"
+  }
+]}

@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "kafka.bootstrap-servers",
+    "type": "java.lang.String",
+    "description": "A description for 'kafka.bootstrap-servers'"
+  },
+  {
+    "name": "kafka.topic.name",
+    "type": "java.lang.String",
+    "description": "A description for 'kafka.topic.name'"
+  },
+  {
+    "name": "kafka.producer.key-serializer",
+    "type": "java.lang.String",
+    "description": "A description for 'kafka.producer.key-serializer'"
+  },
+  {
+    "name": "kafka.producer.value-serializer",
+    "type": "java.lang.String",
+    "description": "A description for 'kafka.producer.value-serializer'"
+  }
+]}
